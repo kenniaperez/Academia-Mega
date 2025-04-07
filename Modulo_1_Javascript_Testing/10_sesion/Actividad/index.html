@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible">
+        <meta name="author" constant="Kennia Perez">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Actividad Clase 10</title>
+    </head>
+    <body>
+        <h1>Login</h1>
+        <input type="text" id="username" placeholder="Ususario" />
+        <input type="password" id="password" placeholder="Contraseña" />
+        <br> <br>
+        <button onclick="login()">Iniciar Sesión</button>
+        <button onclick="logout()">Salir</button>
+        <script src="authModule.js"></script>
+        <script src="userSingleton.js"></script>
+        <script>
+            function login(){
+                const user =  document.getElementById("username").value;
+                const pass =  document.getElementById("password").value;
+                //console.log("username: " , user);
+                //console.log("password: " , pass);
+
+                AuthModule.login(user,pass)
+            }
+            function logout(){
+                AuthModule.logout();
+            }
+        </script>
+    </body>
+    </html>

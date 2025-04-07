@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" constant="Kennia Perez">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeApi</title>
+    <style>
+        body{
+            background-color: #aacfe3;
+            padding: 20px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .titulo{
+            border-bottom: 3px #105e8f solid;
+            margin-bottom: 20px;
+        }
+
+        h1{
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #185776;
+        }
+
+        #pokemon-container{
+            display: grid;
+            grid-template-columns: 200px 200px 200px ;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .cardContainer{
+            border: 4px;
+            box-shadow: 0 .15rem 1.75rem #21283226;
+            padding: 10px;
+        }
+        .card{
+            background-color: #d2e2e7;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0);
+            border-width: 4px;
+            border-color: #2266a5;
+            border: .25rem dotted #e0e5ec;
+            text-align: center;
+        }
+
+        .card img{
+            width: 100px;
+        }
+
+        .card h2{
+            font-size: 15px;
+            margin: 10px;
+            text-transform: capitalize;
+            letter-spacing: .1em;
+            font-weight: 700;
+            color: #4d535a;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="titulo">
+        <h1>Lista de Pokemon</h1>
+    </div>
+    
+    <div id="pokemon-container">
+
+    </div>
+    <script>
+        async function obtenerPokemones(){
+            const container = document.getElementById("pokemon-container");
+        
+            for(let i =1; i<=9; i++){
+                try{
+                    const respuesta = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
+                    console.log(respuesta);
+                    const data = await respuesta.json();
+                    console.log(data);
+
+                    const cardContainer = document.createElement("div");
+                    cardContainer.className ="cardContainer";
+
+                    const card = document.createElement("div");
+                    card.className ="card";
+                    card.innerHTML=`
+                        <img src="${data.sprites.front_default}" alt="${data.name}">
+                        <h2>${data.name}</h2>
+                        `;
+                        cardContainer.appendChild(card);
+                        container.appendChild(cardContainer);
+                }catch(error){
+                    console.log("Erorr al obtener el Pokemon:", error);
+                }
+            }
+            
+        }
+        obtenerPokemones();
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" constant="Kennia Perez">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 8</title>
+</head>
+<body>
+    <script>
+        // console.log("Inicio");
+        // setTimeout(()=>{
+        //     console.log("Esto se ejecutara después de 5 segundos");
+        // }, 5000)
+        // console.log("Fin");
+
+
+        // //Promesa
+        // console.log("Bienvenidos a la pagina web");
+        // console.log("Primera tarea");
+
+        // const promesa = new Promise((resolve, reject)=>{
+        //     setTimeout(()=>{
+        //         let exito = true;
+        //         if(exito) resolve("Promesa resuelta es...")
+        //         else reject("Promesa Rechazada");
+        //     }, 5000)
+        // })
+
+        // console.log("Tercera tarea");
+        // console.log("Cuarta tarea");
+        // promesa.then(resultado => console.log(resultado));
+
+
+        // promesa//.then(resultado => console.log(resultado));
+        //     .then(resultado => console.log(resultado))
+        //     .catch(error => console.log(error))
+        //     .finally(()=> console.log("Prmesa Terminada"))
+        
+
+        async function obtenerDatos(){
+            try{
+                console.log("Obtener datos...")
+                let respuesta = await new Promise(resolve =>
+                    setTimeout(()=>resolve("Datos recibidos"),400))
+                    console.log(respuesta)
+            }catch(error){
+                console.error("Error:", error)
+            }
+        }
+    </script>
+</body>
+</html>
