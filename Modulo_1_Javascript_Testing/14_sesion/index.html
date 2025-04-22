@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible">
+        <meta name="author" constant="Kennia Perez">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Clase 13 - MiniFramework</title>
+    </head>
+    <body>
+        <h1>Clase 14 : Intro TDD</h1>
+        <script>
+            function expect(actual){
+                return{
+                    toBe(expected){
+                        if(actual === expected){
+                            console.log("Pasó")
+                        }else{
+                            console.log(`Falló: esperado ${expected}, recibido ${actual}`);
+                        }
+                    }
+                }
+            }
+
+            function esPar(n){
+                console.log(typeof n)
+                if(typeof n !== "number") return false;
+                return n%2 === 0;
+            }
+
+            const numero = expect(esPar(2))
+            console.log(numero)
+
+            //test sin implementar la funcion
+            expect(esPar("dgdfg.")).toBe(true)
+            expect(esPar(3)).toBe(false)
+        </script>
+    </body>
+</html>

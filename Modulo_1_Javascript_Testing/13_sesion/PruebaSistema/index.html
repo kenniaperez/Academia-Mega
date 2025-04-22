@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible">
+        <meta name="author" constant="Kennia Perez">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Clase 13 - Prueba de Integración</title>
+        <style>
+            body{font-family: Arial, Helvetica, sans-serif;}
+            input,button{margin-top: 10px; display: block;}
+            .error{color: red;}
+        </style>
+    </head>
+    <body>
+        <h1>Prueba de Integración</h1>
+        <script>
+            function esCorreoValido(email){
+                const regex = `/^[^\s@]+@[^\s@]+\.[^\s@]+$/`
+                return regex.test(email);
+            }
+
+            document.getElementById("form").addEventListener("submit", (e)=>{
+                e.preventDefault();
+
+                const nombre = document.getElementById("nombre").value;
+                const correo = document.getElementById("correo").value;
+                const mensaje = document.getElementById("mensaje");
+
+                if(!nombre || !esCorreoValido(correo)){
+                    mensaje.textContent="Datos invalidos";
+                    mensaje.className= "error";
+                }else{
+                    mensaje.textContent`Gracias por registrarte, ${nombre}!!`;
+                    mensaje.className= "";
+                }
+            })
+            
+        </script>
+    </body>
+</html>
