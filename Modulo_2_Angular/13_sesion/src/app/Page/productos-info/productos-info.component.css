@@ -1,0 +1,23 @@
+.container{
+    display: flex; 
+    gap: 2rem;
+}
+.containerProductos{
+    width: 50%;
+}
+
+@media (max-width: 500px){
+    .container{
+        display: block;
+        width: 100%;
+    }
+    .cad{
+        display: block;
+        width: 100%;
+
+    }
+    .containerProductos{
+        width: 100%;
+
+    }
+}
