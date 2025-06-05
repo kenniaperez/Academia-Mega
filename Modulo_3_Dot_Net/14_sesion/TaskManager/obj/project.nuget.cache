@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "O3O2xecjC34=",
+  "success": true,
+  "projectFilePath": "D:\\Cursos Mega\\.NET\\Clase13 - copia\\TaskManager\\TaskManager.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\elgonzalezm\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.4\\microsoft.aspnetcore.openapi.9.0.4.nupkg.sha512",
+    "C:\\Users\\elgonzalezm\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}
