@@ -1,0 +1,14 @@
+D:\Cursos Mega\.NET\Clase19\TaskManager.Shared\obj\Debug\net9.0\TaskManager.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\Cursos Mega\.NET\Clase19\TaskManager.Shared\obj\Debug\net9.0\TaskManager.Shared.AssemblyInfoInputs.cache
+D:\Cursos Mega\.NET\Clase19\TaskManager.Shared\obj\Debug\net9.0\TaskManager.Shared.AssemblyInfo.cs
+D:\Cursos Mega\.NET\Clase19\TaskManager.Shared\obj\Debug\net9.0\TaskManager.Shared.csproj.CoreCompileInputs.cache
+D:\Cursos Mega\.NET\Clase19\TaskManager.shared\bin\Debug\net9.0\TaskManager.Shared.exe
+D:\Cursos Mega\.NET\Clase19\TaskManager.shared\bin\Debug\net9.0\TaskManager.Shared.deps.json
+D:\Cursos Mega\.NET\Clase19\TaskManager.shared\bin\Debug\net9.0\TaskManager.Shared.runtimeconfig.json
+D:\Cursos Mega\.NET\Clase19\TaskManager.shared\bin\Debug\net9.0\TaskManager.Shared.dll
+D:\Cursos Mega\.NET\Clase19\TaskManager.shared\bin\Debug\net9.0\TaskManager.Shared.pdb
+D:\Cursos Mega\.NET\Clase19\TaskManager.shared\obj\Debug\net9.0\TaskManager.Shared.dll
+D:\Cursos Mega\.NET\Clase19\TaskManager.shared\obj\Debug\net9.0\refint\TaskManager.Shared.dll
+D:\Cursos Mega\.NET\Clase19\TaskManager.shared\obj\Debug\net9.0\TaskManager.Shared.pdb
+D:\Cursos Mega\.NET\Clase19\TaskManager.shared\obj\Debug\net9.0\TaskManager.Shared.genruntimeconfig.cache
+D:\Cursos Mega\.NET\Clase19\TaskManager.shared\obj\Debug\net9.0\ref\TaskManager.Shared.dll
