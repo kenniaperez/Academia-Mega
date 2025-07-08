@@ -1,0 +1,1 @@
+D:\Cursos Mega\.NET\Clase26\Skycast\Skycast\bin\Release\net9.0\publish\web.config

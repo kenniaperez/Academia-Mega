@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.4" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Extensions.Http.Polly" Version="9.0.6" />
+  </ItemGroup>
+  <!--Después de cada Build aplicara los comandos -->
+  <!--Se toma la ruta relativa del app.css -->
+  <!--Minify Para hacer el Css chiquito en una sola linea -->
+  <Target>
+     <Exec Command="dotnet tailwindcss -i styles/input.css -o wwwroot\css\app.css --minify" />
+  </Target>
+</Project>

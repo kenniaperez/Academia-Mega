@@ -1,0 +1,75 @@
+﻿@page "/"
+
+@using SkyCast.Services
+@inject WeatherService Api
+
+<h1 class="text-3x1 font-bold mb-4">Pronóstico</h1>
+
+<!-- #region >-->
+<div class="mb-4 flex gap-2">
+    <input @bind="city"
+            placeholder="Ciudad..."
+            class="border rounded px-2 py-1 flex-1"/>
+    <button class="bg-blue-600 text-white px-4 rounded" @onclick="Search">Buscar</button>
+ 
+</div>
+
+
+
+@if (loading)
+{
+    <p>Cargando...</p>
+}
+else if (error != null)
+{
+    <p class="text-red-600">@error</p>
+}
+else if (data != null)
+{
+    // Div con la información del clima
+    <div class="p-6 rounded shadow bg-white max-w-sm">
+        <h2 class="text-xl font-semibold">@data.Name</h2>
+        <p class="text 6x1">Temperatura: @data.main.Temp.ToString("0") °C</p>
+        <p class="capitalize">Condición: @data.Weather.First().Description</p>
+        <p class="text-sm text-gray-500">Humedad: @data.main.Humidity %</p>
+    <p class="text-red-500">No se encontraron resultados para la ciudad: @city</p
+    </div>
+}
+
+
+@code {
+    // Variables para almacenar el estado de la búsqueda
+    string city = "Mexico City";
+    bool loading;
+    string? error;
+    WeatherDto? data;
+    async Task Search()
+    {
+        loading = true;
+        error = null;
+
+        // Validar que la ciudad no esté vacía
+        try
+        {
+            // Llamar al servicio para obtener el clima
+            data = await Api.GetByCityAsync(city);
+            if (data == null)
+            {
+                error = "No se encontraron resultados para la ciudad: " + city;
+            }
+            else
+            {
+                error = null;
+            }
+        }
+        catch (Exception ex)
+        {
+            error = ex.Message;
+        }
+        loading = false;
+    }
+    // Método para cargar el clima por defecto al iniciar
+    // Cargar el clima por defecto al iniciar
+    protected override async Task OnInitializedAsync() => await Search();
+    
+}
